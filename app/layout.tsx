@@ -1,12 +1,19 @@
-import "@/styles/globals.css"
+import "./globals.css"
 import { Inter as FontSans } from "next/font/google"
+import { Metadata } from "next"
 
 import { cn } from "@/lib/utils"
+import { title } from "process"
 
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 })
+
+export const metadata: Metadata = {
+  title: "LiveDocs",
+  description: "Write Docs together",
+}
 
 export default function RootLayout({
   children,
@@ -17,12 +24,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head />
       <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
-        )}
+        className={cn("min-h-screen font-sans antialiased", fontSans.variable)}
       >
-        ...
+        {children}
       </body>
     </html>
   )

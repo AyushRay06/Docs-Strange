@@ -1,9 +1,22 @@
-import { Editor } from "@/components/editor/Editor"
+//import { Editor } from "@/components/editor/Editor"
+import { Header } from "@/components/header"
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs"
 
 export const Document = () => {
   return (
     <div>
-      <Editor />
+      <Header>
+        <div className="flex w-fit items-center justify-center gap-2">
+          <p className="document-title">Test</p>
+        </div>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+      </Header>
+      {/* <Editor /> */}
     </div>
   )
 }

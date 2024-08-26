@@ -3,7 +3,6 @@ import { Inter as FontSans } from "next/font/google"
 import { Metadata } from "next"
 
 import { cn } from "@/lib/utils"
-import { title } from "process"
 
 const fontSans = FontSans({
   subsets: ["latin"],
